@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 1073741824,
+"dataUrl": "Labyrintho.data.unityweb",
+"asmCodeUrl": "Labyrintho.asm.code.unityweb",
+"asmMemoryUrl": "Labyrintho.asm.memory.unityweb",
+"asmFrameworkUrl": "Labyrintho.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
