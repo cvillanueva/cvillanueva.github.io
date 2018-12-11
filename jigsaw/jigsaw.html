@@ -20,6 +20,11 @@
     <script src="js/zim.js"></script>
     <!-- use zimjs.com/distill for minified individual functions! -->
 
+    <!--
+        https://192.168.10.105/jigsaw/jigsaw.html?row=10&column=8&bg=vaquito_y_arian&width=768&height=1024
+        https://192.168.10.105/jigsaw/jigsaw.html?row=8&column=10&bg=vaquito_800x600&width=1024&height=768
+    -->
+
     <script>
         // SCALING OPTIONS
         // scaling can have values as follows with full being the default
@@ -28,12 +33,24 @@
         // "full"	sets stage to window size with no scaling
         // "tagID"	add canvas to HTML tag of ID - set to dimensions if provided - no scaling
 
+        // var get_param = window.location.search.substr(1);
+        // console.log('get_param:'+get_param);
+
         var scaling = "fit"; // this will resize to fit inside the screen dimensions
-        var width = 1024;
-        var height = 768;
+        var width = 768;
+        var height = 1024;
         var countPieces = 0;
         var totalPieces = 0;
+        console.log('1 totalPieces:'+totalPieces);
         // as of ZIM 5.5.0 you do not need to put zim before ZIM functions and classes
+
+        var obj = getQueryString();
+        zog(obj)
+        if(obj) {
+           width = obj.width;
+           height = obj.height;
+        }
+
         var frame = new Frame(scaling, width, height);
         frame.on("ready", function()
         {
@@ -53,27 +70,36 @@
             // with chaining - can also assign to a variable for later access
             var imageObj = [];
             var piecesArrayObj = [];
-            frame.loadAssets(["vaquito_800x600.jpg"], "assets/");
+            var obj = getQueryString();
+            zog(obj)
+            var bg = "vaquito_800x600.jpg";
+            if(obj) {
+               bg = obj.bg+'.jpg';
+            }
+            frame.loadAssets([bg], "assets/");
 
             var label = new Label({
                text:"CLICK",
                size:40,
-               font:"courier",
-               color:"orange",
+               font:"arial",
+               color:"pink",
                rollColor:"red",
-               fontOptions:"italic bold"
+               fontOptions:"bold"
             });
             stage.addChild(label);
-            label.x = label.y = 20;
+            label.x = 40;
+            label.y = 20;
             label.on("click", function(){zog("clicking");});
 
 
             frame.on("complete", function() {
 
 
-                imageObj = frame.asset("vaquito_800x600.jpg").clone();
-                imageObj.addTo(con);
-                imageObj.alpha = 0.2;
+                // imageObj = frame.asset("vaquito_800x600.jpg").clone();
+                // imageObj.addTo(con);
+                // imageObj.alpha = 0.2;
+
+                bg = "vaquito_800x600.jpg";
 
                 var piecesArray = new Array();
                 var horizontalPieces = 10;
@@ -84,7 +110,14 @@
                 {
                    horizontalPieces = obj.row;
                    verticalPieces = obj.column;
+                   bg = obj.bg+'.jpg';
+                   console.log('2 bg:'+bg);
                 }
+
+                imageObj = frame.asset(bg).clone();
+                imageObj.addTo(con);
+                imageObj.alpha = 0.2;
+
                 var imageWidth = imageObj.width;
                 var imageHeight = imageObj.height;
                 var pieceWidth = Math.round(imageWidth / horizontalPieces);
@@ -97,7 +130,7 @@
                 imageObj.pos(puzzleX,puzzleY);
                 zog(puzzleX,puzzleY);
 
-                label.text = "Rompete la cabeza con Vaquito =^.^= "+countPieces+"/"+totalPieces;
+                label.text = "Vaquito te da amors =^.^= "+countPieces+"/"+totalPieces;
 
 
                 for (j = 0; j < verticalPieces; j++) {
@@ -156,7 +189,7 @@
                                 zog("countPieces",countPieces);
                                 if(countPieces == totalPieces)
                                 {
-                                    var pane = new Pane({width:600,label:"VERY NICE!", height:250, modal:false, displayClose:false});
+                                    var pane = new Pane({width:600,label:"Vaquito es feliz!", height:250, modal:false, displayClose:false});
 
                                     var confirm = new Button(120, 50, "ON", "green").center(pane).mov(0,70);
 
@@ -177,11 +210,7 @@
                         //
                         var commandi = context.beginBitmapFill(imageObj.image).command;
 
-
                         context.moveTo(offsetX, offsetY);
-
-
-
 
                         if (j != 0) {
                             context.lineTo(offsetX + 3 * x8, offsetY);
