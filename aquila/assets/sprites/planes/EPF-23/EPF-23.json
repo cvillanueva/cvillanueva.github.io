@@ -1,0 +1,21 @@
+{
+	"frames": [
+
+		{
+			"filename": "epf-23",
+			"frame": {"x":0,"y":0,"w":71,"h":301},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":71,"h":301},
+			"sourceSize": {"w":71,"h":301},
+			"pivot": {"x":0.5,"y":0.5}
+		}
+	],
+	"meta": {
+		"version": "1.0",
+		"image": "EPF-23.png",
+		"format": "RGBA8888",
+		"size": {"w":71,"h":301},
+		"scale": "1"
+	}
+}
