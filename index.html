@@ -1,685 +1,1081 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Claudio Villanueva's Portfolio</title>
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="Claudio Villanueva's Portfolio" name="description">
-    <meta content="BdgPixel" name="author">
-    <!--Fav-->
-    <link href="images/favicon.ico" rel="shortcut icon">
+<head>
+	
+	<!--
+		Basic
+	-->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<title>Claudio's Resume</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="description" content="vCard & Resume Template" />
+	<meta name="keywords" content="vcard, resposnive, resume, personal, card, cv, cards, portfolio" />
+	<meta name="author" content="beshleyua" />
+	
+	<!--
+		Load Fonts
+	-->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	
+	<!--
+		Load CSS
+	-->
+	<link rel="stylesheet" href="css/basic.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="css/blogs.css" />
+	<link rel="stylesheet" href="css/ionicons.css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/owl.carousel.css" />
 
-    <!--styles-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
-    <link href="css/magnific-popup.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+	<!--
+		Background Gradient
+	-->
+	<link rel="stylesheet" href="css/gradient.css" />
+	
+	<!--
+		Template New-Skin
+	-->
+	<link rel="stylesheet" href="css/new-skin/new-skin.css" />
 
-    <!--fonts google-->
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+	<!--
+		Template RTL
+	-->
+	<!--<link rel="stylesheet" href="css/rtl.css" />-->
+	
+	<!--
+		Template Colors
+	-->
+	<link rel="stylesheet" href="css/demos/demo-2-colors.css" />
+	<!--<link rel="stylesheet" href="css/template-colors/blue.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/orange.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/pink.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/purple.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/red.css" />-->
 
-    <!--[if lt IE 9]>
-       <script type="text/javascript" src="js/html5shiv.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <!--PRELOADER-->
-    <div id="preloader">
-      <div id="status">
-        <img alt="logo" src="images/logo-big.png">
-      </div>
-    </div>
-    <!--/.PRELOADER END-->
+	<!--
+		Template Dark
+	-->
+	<link rel="stylesheet" href="css/new-skin/classic-skin.css" />
+	<link rel="stylesheet" href="css/template-dark/dark.css" />
+	
 
-    <!--HEADER -->
-    <div class="header">
-      <div class="for-sticky">
-        <!--LOGO-->
-        <div class="col-md-2 col-xs-6 logo">
-          <!-- <a href="index.html"><img alt="logo" class="logo-nav" src="images/logo.png"></a> -->
-          <a href="index_jp.html">
-          <img class="icon icons8-Japan" width="50" height="50" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAC3ElEQVRoQ+2ZTWwSURDH/4A1SGRJQbBUaQIVqPXS0BNyaRMP6sWPkwcvHoyfN5OaaIwx3kw8qK0aTTSxMR6NB0uNJuVCOagk0liBKiTFpghCy1Lrxlpq3iqmNm2B5ZXd4m6yp915O7/5z8ybl1WgTi5FnXBABpGakrIiklPk0cBrn9ScEuKPot/7ZsFiNkCj3ijEXnSbWe4HEpMZ8CAel2NhS6N2XdbL16n8gj8YVcggoufUHwdkRaSiRNEPWZH/SpHply/wLfQOXCQMLjHOs6stLVA728C4PdDu9lCLx5qkFjvsx5c7vZjPs9AZjVAzDDQ6He/0bC4HjmWRS6eh0jLYeuosGApA1EEm7/Yh++wpmux2GG02qBoalo36/Nwc0rEYkmNj0B88DPOJ01WpQxWEQOQGB2B1ubDZYCjLsZlMBvFgELq9+2E+eaYsm+VeogZC0ilx9TJ2uN1lQxQdIjAfAwFYLl0RnGbUQKJHj8Cgb0ST0ykoqslIBNmpadj7nwiypwJCulOy7ybau7pWrIlS3pGaGfX50NxzQZAqVEAmrl+DMjyKlo6OUv6u+nx8ZAQFuxPbzvVUvA4VkE/Hj0HPaGGy2Sp2YLFBKhZDNj+D1nsPKl6HCsj7fXsEFflSb4tFv8v7Sgap6mBFNbXYPFrvPxRHEWrFHgqh4GgTr9j59tt7A+3d3dW136EhNJ+/KF77JXlAY0PMTE3DIeaGSEDqZkQhMPzQ6H0Oa2dn2fOW5IbGYpv5O8Y7HDBarauP8fE4ktEo9AcOVTX5km9T2RCX9kqSZsnbt1AgByuTCZsYhr/J9Z1l+TuXSkHJ6NAk1YPVYigClA/4wYU/gPuc+H3U3W6Bum0ntG6PoO600gazJopUvJtRMJBBKASR6hKyIlTDSWExWREKQaS6xD+K1MWvt8eDb4dVG5QaqmGq8WLzPwuz6/K/4XJxkkFqnD0lPycrUjJENX6hbhT5BQGHgVhSO/JwAAAAAElFTkSuQmCC">
-        </a>
-        </div>
-        <!--/.LOGO END-->
-      </div>
-      <div class="menu-wrap">
-        <nav class="menu">
-          <div class="menu-list">
-            <a data-scroll="" href="#home" class="active">
-              <span>Home</span>
-            </a>
-            <a data-scroll="" href="#about">
-              <span>About</span>
-            </a>
-            <a data-scroll="" href="#work">
-              <span>Work</span>
-            </a>
-            <a data-scroll="" href="#employement">
-              <span>Employement</span>
-            </a>
-            <a data-scroll="" href="#skill">
-              <span>Skills</span>
-            </a>
-            <a data-scroll="" href="#education">
-              <span>Education</span>
-            </a>
-            <a data-scroll="" href="#resume">
-              <span>Resume</span>
-            </a>
-          </div>
-        </nav>
-        <button class="close-button" id="close-button">Close Menu</button>
-      </div>
-      <button class="menu-button" id="open-button">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button><!--/.for-sticky-->
-    </div>
-    <!--/.HEADER END-->
+	<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!--
+		Favicons
+	-->
+	<link rel="shortcut icon" href="images/favicons/favicon.ico">
+	
+</head>
 
-    <!--CONTENT WRAP-->
-    <div class="content-wrap">
-      <!--CONTENT-->
-      <div class="content">
-        <!--HOME-->
-        <section id="home">
-          <div class="container">
-            <div class="row">
-              <div class="wrap-hero-content">
-                  <div class="hero-content">
-                    <h1>Hello</h1>
-                    <br>
-                    <span class="typed"></span>
-                  </div>
-              </div>
-              <div class="mouse-icon margin-20">
-                <div class="scroll"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--/.HOME END-->
+<body>
+	<div class="page new-skin">
+		
+		<!-- preloader -->
+		<div class="preloader">
+			<div class="centrize full-width">
+				<div class="vertical-center">
+					<div class="spinner">
+						<div class="double-bounce1"></div>
+						<div class="double-bounce2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <!--ABOUT-->
-        <section id="about">
-          <div class="col-md-6 col-xs-12 no-pad">
-            <div class="bg-about"></div>
-          </div>
-          <div class="col-md-6 col-sm-12 col-xs-12 white-col">
-            <div class="row">
-              <!--OWL CAROUSEL2-->
-              <div class="owl-carousel2">
-                <div class="col-md-12">
-                  <div class="wrap-about">
-                    <div class="w-content">
-                      <p class="head-about">
-                        Mobile apps are closer to the people, in their pocket. With a good mobile application you can be closer to your customers.
-                      </p>
+		<!-- background -->
+		<div class="background gradient">
+			<ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+		</div>
 
-                      <h5 class="name">
-                        Claudio Villanueva
-                      </h5>
-                      <!-- <img alt="signature" src="images/signature.png"> -->
-                    </div>
-                  </div>
-                </div>
+		<!--
+			Container
+		-->
+		<div class="container opened" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
 
-                <!-- Info -->
-                <div class="col-md-12 col-sm-12 col-xs-12 white-col">
-                  <div class="row">
-                    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
-                      <div class="wrap-about">
-                        <table class="w-content">
-                          <tr>
-                            <td class="title">Name </td>
-                            <td class="break">:</td>
-                            <td> Claudio VIllanueva</td>
-                          </tr>
-                          <tr>
-                            <td class="title">Phone </td>
-                            <td class="break">:</td>
-                            <td> 070 4457 0995</td>
-                          </tr>
-                          <tr>
-                            <td class="title">Email </td>
-                            <td class="break">:</td>
-                            <td> claudioff@gmail.com</td>
-                          </tr>
-                          <tr>
-                            <td class="title">Address </td>
-                            <td class="break">:</td>
-                            <td> Japan, Tokyo, Toshima-ku, Minami Nagasaki</td>
-                          </tr>
-                          <tr>
-                            <td class="title">Skype </td>
-                            <td class="break">:</td>
-                            <td> claudio.villanueva78</td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--/.OWL CAROUSEL2 END-->
-            </div>
-          </div>
-        </section>
-        <!--/.ABOUT END-->
+			<!--
+				Header
+			-->
+			<header class="header">
 
-        <!--WORK-->
-        <section class="grey-bg mar-tm-10" id="work">
-          <div class="container">
-            <div class="row">
+				<!-- header profile -->
+				<div class="profile">						
+					<div class="image">
+						<a href="#">
+							<img src="images/claudio_villanueva.jpg" alt="Claudio Villanueva">
+						</a>
+					</div>
+					<div class="title">Claudio Villanueva</div>
+					<div class="subtitle subtitle-typed">
+						<div class="typing-title">
+							<p>Software Engineer</p>
+							<p>iOS Developer</p>
+							<p>Freelancer</p>
+						</div>
+					</div>
+				</div>
 
-              <div class="col-md-3">
-                <h3 class="title-small">
-                  <span>Work</span>
-                </h3>
-                <p class="content-detail">
-                  I have wide experience with mobile applications, Android & iOS I builded apps from scratch, using different API’s such as networking, media and push messaging. I designed complete systems starting from the database, services layer, and mobile clients.
-                  <br><br>
-                  The last application I have been working on is the iOS application for Wom telephone company. This application has more than one million users in its iOS version. I was in charge of leading the ui and architectural redesign of this application
-                  <br><br>
-                  My main achievement is the Pixtoome platform, which is a messaging system for schools, similar to Line or Whatsapp with special functionalities for schools.
-                  Teachers can commmunicate with parents, one to one or the entire course, quickly and check if their messages are been read. The system sends large amounts of messages daily, on average, each message reaches 40 users, number that matches the number of students in a classroom. To deal with this, the system has a large number of server processes that work asynchronously using messaging queues.
-                  <br><br>
-                  I have some personal projects, developed to learn, to experiment and just for fun!
-                  <br><br>
-                  KanjiMemo it was designed to learn Kanji, playing a quiz game the player begins with the most used kanjis. Every level has 12 kanji with a total of 162 levels, the kanji already learned are shown alternately to be reviewed. It is avalaible for English and Spanish speakers.
-                  <br><br>
-                  WordsMemo it was designed to learn any language the user want, the user can select 2 languages and enter pairs of words, the way lo learn is to play a quiz game. The advantage of this app is that the users can add the words they learn in your daily life.
-                  <br><br>
-                  I also have explored possibilities with Unity 3D engine, I developed a small third person game, called Labyrintho, which uses an recursive division algorithm to generate a random maze. This game runs in PC, Mac, Web (OpenGL), Android and iOS.
-                </p>
-              </div>
+				<!-- menu -->
+				<div class="top-menu">
+					<ul>
+						<li class="active">
+							<a href="#about-card">
+								<span class="icon ion-person"></span>
+								<span class="link">About</span>
+							</a>
+						</li>
+						<li>
+							<a href="#resume-card">
+								<span class="icon ion-android-list"></span>
+								<span class="link">Resume</span>
+							</a>
+						</li>
+						<li>
+							<a href="#works-card">
+								<span class="icon ion-paintbrush"></span>
+								<span class="link">Works</span>
+							</a>
+						</li>
+						<li>
+							<a href="#contacts-card">
+								<span class="icon ion-at"></span>
+								<span class="link">Contact</span>
+							</a>
+						</li>
+					</ul>
+				</div>
 
-              <div class="col-md-9 content-right">
-                <div class="zoom-gallery">
-                  <a href="images/app_wom_01.png" data-source="https://apps.apple.com/us/app/wom/id1192713536" title="Wom App -  Home screen" style="width:126px;height:207px;">
-                    <img src="images/app_wom_01.png" width="126" height="207">
-                  </a>
-                  <a href="images/app_wom_02.png" data-source="https://apps.apple.com/us/app/wom/id1192713536" title="Wom App -  My account screen" style="width:126px;height:207px;">
-                    <img src="images/app_wom_02.png" width="126" height="207">
-                  </a>
-                  <a href="images/app_wom_03.png" data-source="https://apps.apple.com/us/app/wom/id1192713536" title="Wom App -  My profile screen" style="width:126px;height:207px;">
-                    <img src="images/app_wom_03.png" width="126" height="207">
-                  </a>
-                  <a href="images/app_wom_04.png" data-source="https://apps.apple.com/us/app/wom/id1192713536" title="Wom App -  Favorites screen" style="width:126px;height:207px;">
-                    <img src="images/app_wom_04.png" width="126" height="207">
-                  </a>
-                  <a href="images/app_wom_05.png" data-source="https://apps.apple.com/us/app/wom/id1192713536" title="Wom App -  Favorites screen" style="width:126px;height:207px;">
-                    <img src="images/app_wom_05.png" width="126" height="207">
-                  </a>
-                </div>
-              </div>
+			</header>
 
-              <div class="col-md-9 content-right">
-                <div class="zoom-gallery">
-                  <a href="images/pixtoome_ios_main.png" data-source="https://itunes.apple.com/mx/app/pixtoo-me/id1099869455?mt=8" title="Pixtoome - iOS client - main screen" style="width:125px;height:207px;">
-                    <img src="images/pixtoome_ios_main_mini.png" width="125" height="207">
-                  </a>
-                  <a href="images/pixtoome_ios_chat.png" data-source="https://itunes.apple.com/mx/app/pixtoo-me/id1099869455?mt=8" title="Pixtoome, iOS client, chat screen" style="width:125px;height:207px;">
-                    <img src="images/pixtoome_ios_chat_mini.png" width="125" height="207">
-                  </a>
-                  <a href="images/pixtoome_ios_share.png" data-source="https://itunes.apple.com/mx/app/pixtoo-me/id1099869455?mt=8" title="Pixtoome, iOS client, share screen" style="width:125px;height:207px;">
-                    <img src="images/pixtoome_ios_share_mini.png" width="125" height="207">
-                  </a>
-                  <a href="images/pixtoome_ios_help.png" data-source="https://itunes.apple.com/mx/app/pixtoo-me/id1099869455?mt=8" title="Pixtoome, iOS client, help screen" style="width:125px;height:207px;">
-                    <img src="images/pixtoome_ios_help_mini.png" width="125" height="207">
-                  </a>
-                  <a href="images/pixtoome_ios_profile.png" data-source="https://itunes.apple.com/mx/app/pixtoo-me/id1099869455?mt=8" title="Pixtoome, iOS client, profile screen" style="width:125px;height:207px;">
-                    <img src="images/pixtoome_ios_profile_mini.png" width="125" height="207">
-                  </a>
-                </div>
-              </div>
+			<!--
+				Card - Started
+			-->
+			<div class="card-started" id="home-card">
 
-              <div class="col-md-9 content-right">
-                <div class="zoom-gallery">
-                  <a href="images/pixtoome_android_main.png" data-source="https://play.google.com/store/apps/details?id=com.pixtoome.androidmobile" title="Pixtoome - Android client - main screen" style="width:125px;height:202px;">
-                    <img src="images/pixtoome_android_main_mini.png" width="125" height="202">
-                  </a>
-                  <a href="images/pixtoome_android_chat.png" data-source="https://play.google.com/store/apps/details?id=com.pixtoome.androidmobile" title="Pixtoome, Android client, chat screen" style="width:125px;height:202px;">
-                    <img src="images/pixtoome_android_chat_mini.png" width="125" height="202">
-                  </a>
-                  <a href="images/pixtoome_android_share.png" data-source="https://play.google.com/store/apps/details?id=com.pixtoome.androidmobile" title="Pixtoome, Android client, share screen" style="width:127px;height:207px;">
-                    <img src="images/pixtoome_android_share_mini.png" width="127" height="207">
-                  </a>
-                  <a href="images/pixtoome_android_help.png" data-source="https://play.google.com/store/apps/details?id=com.pixtoome.androidmobile" title="Pixtoome, Android client, help screen" style="width:127px;height:207px;">
-                    <img src="images/pixtoome_android_help_mini.png" width="127" height="207">
-                  </a>
-                  <a href="images/pixtoome_android_profile.png" data-source="https://play.google.com/store/apps/details?id=com.pixtoome.androidmobile" title="Pixtoome, Android client, profile screen" style="width:127px;height:207px;">
-                    <img src="images/pixtoome_android_profile_mini.png" width="127" height="207">
-                  </a>
-                </div>
-              </div>
+				<!--
+					Profile
+				-->
+				<div class="profile">
 
-              <div class="col-md-9 content-right">
-                <div class="zoom-gallery">
-                  <a href="images/pixtoome_web_courseview.png" data-source="https://www.pixtoome.com" title="Pixtoome - Web client - main screen" style="width:157px;height:107px;">
-                    <img src="images/pixtoome_web_courseview_mini.png" width="157" height="107">
-                  </a>
-                  <a href="images/pixtoome_web_chat.png" data-source="https://www.pixtoome.com" title="Pixtoome, Web client, chat screen" style="width:157px;height:107px;">
-                    <img src="images/pixtoome_web_chat_mini.png" width="157" height="107">
-                  </a>
-                  <a href="images/pixtoome_web_event_list.png" data-source="https://www.pixtoome.com" title="Pixtoome, Web client, share screen" style="width:157px;height:103px;">
-                    <img src="images/pixtoome_web_event_list_mini.png" width="157" height="103">
-                  </a>
-                  <a href="images/pixtoome_web_students.png" data-source="https://www.pixtoome.com" title="Pixtoome, Web client, share screen" style="width:157px;height:107px;">
-                    <img src="images/pixtoome_web_students_mini.png" width="157" height="107">
-                  </a>
-                </div>
-              </div>
+					<!-- profile image -->
+					<div class="slide" style="background-image: url(images/bg.jpg);"></div>
 
-              <div class="col-md-9 content-right">
-                <div class="zoom-gallery">
-                  <a href="images/kanjimemo_main.png" data-source="https://play.google.com/store/apps/details?id=com.cva.kanjimemo" title="KanjiMemo -  Main screen" style="width:126px;height:207px;">
-                    <img src="images/kanjimemo_main_mini.png" width="126" height="207">
-                  </a>
-                  <a href="images/kanjimemo_main2.png" data-source="https://play.google.com/store/apps/details?id=com.cva.kanjimemo" title="KanjiMemo -  Main screen" style="width:126px;height:207px;">
-                    <img src="images/kanjimemo_main2_mini.png" width="126" height="207">
-                  </a>
-                  <a href="images/kanjimemo_style.png" data-source="https://play.google.com/store/apps/details?id=com.cva.kanjimemo" title="KanjiMemo -  Style selection screen" style="width:126px;height:207px;">
-                    <img src="images/kanjimemo_style_mini.png" width="126" height="207">
-                  </a>
-                </div>
-              </div>
+					<!-- profile photo -->
+					<div class="image">
+						<img src="images/claudio_villanueva.jpg" alt="" />
+					</div>
 
-              <div class="col-md-9 content-right">
-                <div class="zoom-gallery">
-                  <a href="images/wordsmemo_main.png" data-source="https://play.google.com/store/apps/details?id=com.cva.wordsmemo.wordsmemo" title="WordsMemo -  Main screen" style="width:126px;height:207px;">
-                    <img src="images/wordsmemo_main_mini.png" width="126" height="207">
-                  </a>
-                  <a href="images/wordsmemo_dictionary.png" data-source="https://play.google.com/store/apps/details?id=com.cva.wordsmemo.wordsmemo" title="WordsMemo -  Dictionary screen" style="width:126px;height:207px;">
-                    <img src="images/wordsmemo_dictionary_mini.png" width="126" height="207">
-                  </a>
-                  <a href="images/wordsmemo_add_word.png" data-source="https://play.google.com/store/apps/details?id=com.cva.wordsmemo.wordsmemo" title="WordsMemo -  New word screen" style="width:126px;height:207px;">
-                    <img src="images/wordsmemo_add_word_mini.png" width="126" height="207">
-                  </a>
-                  <a href="images/wordsmemo_select.png" data-source="https://play.google.com/store/apps/details?id=com.cva.wordsmemo.wordsmemo" title="WordsMemo -  Language selection screen" style="width:126px;height:207px;">
-                    <img src="images/wordsmemo_select_mini.png" width="126" height="207">
-                  </a>
-                </div>
-              </div>
+					<!-- profile titles -->
+					<div class="title">Claudio Villanueva</div>
+					
+					<div class="subtitle subtitle-typed">
+						<div class="typing-title">
+							<p>Software Engineer</p>
+							<p>iOS Developer</p>
+							<p>Freelancer</p>
+						</div>
+					</div>
 
-              <div class="col-md-9 content-right">
-                <div>
-                  <a href="Labyrintho/index.html" data-source="Labyrintho/index.html" title="Labyrintho - Unity 3D Project" style="width:300px;height:204px;">
-                    <img src="images/labyrintho.png" width="300" height="204">
-                  </a>
+					<!-- profile socials -->
+					<!-- <div class="social">
+						<a target="_blank" href="https://dribbble.com/"><span class="fa fa-dribbble"></span></a>
+						<a target="_blank" href="https://twitter.com/"><span class="fa fa-twitter"></span></a>
+						<a target="_blank" href="https://github.com/"><span class="fa fa-github"></span></a>
+						<a target="_blank" href="https://www.spotify.com/"><span class="fa fa-spotify"></span></a>
+						<a target="_blank" href="https://stackoverflow.com/"><span class="fa fa-stack-overflow"></span></a>
+					</div> -->
+					
+					<!-- profile buttons -->
+					<div class="lnks">
+						<a href="claudio_villanueva_resume.pdf" class="lnk">
+							<span class="text">Download CV</span>
+						</a>
+						<a href="#" class="lnk discover">
+							<span class="text">Contact Me</span>
+						</a>
+					</div>
 
-                  <a href="aquila/index.html" data-source="aquila/index.html" title="Airfighters JS Phaser.io project" style="width:300px;height:204px;">
-                    <img src="images/airfighters.png" width="300" height="204">
-                  </a>
-                </div>
-              </div>
+				</div>
 
-            </div>
-          </div>
-        </section>
+			</div>
 
-        <!--/.WORK END-->
+			<!-- 
+				Card - About
+			-->
+			<div class="card-inner animated active" id="about-card">
+				<div class="card-wrap">
 
-        <!--EMPLOYEMENT-->
-        <section class="grey-bg" id="employement">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-3">
-                <h3 class="title-small">
-                  <span>Employment</span>
-                </h3>
-                <p class="content-detail">
-                  For most of my career I have been involved in the development of mobile applications.
-                </p>
-              </div>
-              <div class="col-md-9 content-right">
-                <div class="row">
-                  <ul class="listing-item">
-                      <li>
-                        <div class="col-md-6 col-sm-6">
-                          <div class="wrap-card">
-                            <div class="card">
-                              <h2 class="year">
-                                2017 - 2019
-                              </h2>
-                              <p class="job">
-                                Software Engineer and R&D
-                              </p>
-                              <p class="company">
-                                Garapon TV
-                              </p>
-                              <hr>
-                              <div class="text-detail">
-                                <p>
-                                    Garapon TV is a Tokyo based company, with a important customer base that consume the star product which is a device, that record digital TV and streams this content through internet to be consumed by mobile devices and desktop computers. There I was in charge of mobile apps, iOS & Android, introducing new features, improving and fixing the old ones. I also worked in R&D exploring new ideas with the aim of create new products. The most highlighted in R&D was my participation in Machine Learning projects oriented to image classifying.
-                                  <a href="http://www.garapon.tv" target="_blank">http://www.garapon.tv</a>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
+					<!-- 
+						About 
+					-->
+					<div class="content about">
 
-                    <li>
-                      <div class="col-md-6 col-sm-6">
-                        <div class="wrap-card">
-                          <div class="card">
-                            <h2 class="year">
-                              2012 - 2017
-                            </h2>
-                            <p class="job">
-                              Architect and Lead developer
-                            </p>
-                            <p class="company">
-                              Pixtoome SPA
-                            </p>
-                            <hr>
-                            <div class="text-detail">
-                              <p>
-                                Pixtoome SPA. Lead Developer, Software Engineer for iOS and Android applications, PHP, Play Framework, PostgreSQL and Linux scripting. Linux, Amazon AWS and Azure Cloud administration. As an architect and developer I'm in charge of design and implementation of Pixtoome platform, which is a mobile messaging software for schools. Pixtoome has iOS and Android apps, administration site for schools, mobile site to support register and invitations. Server software is deployed in Amazon Web Services. For project management we used Jira and Confluence for documentation.
-                                <a href="http://www.pixtoo.me" target="_blank">http://www.pixtoo.me</a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
+						<!-- title -->
+						<div class="title">About Me</div>
 
-                    <li>
-                      <div class="col-md-6 col-sm-6">
-                        <div class="wrap-card">
-                          <div class="card">
-                            <h2 class="year">
-                              2009 - 2012
-                            </h2>
-                            <p class="job">
-                              Architect and Lead developer
-                            </p>
-                            <p class="company">
-                              E-deas
-                            </p>
-                            <hr>
-                            <div class="text-detail">
-                              <p>
-                                Lead Developer, Software Engineer for Android, Java ME, iOS applications, PHP, PostgreSQL and Linux scripting. Linux and Amazon AWS administration. (I worked in person and remotely)
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
+						<!-- content -->
+						<div class="row">
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="text-box">
+									<p>
+										I am passionate about software development, with around 12 years of experience building software and 8 years with iOS and Android apps. Besides considering myself as a mobile specialist I really enjoy learning new languages and technologies and I have a lot of ductility to work with all kind of software projects.
+									</p>
+								</div>
+							</div>
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="info-list">
+									<ul>
+										<li><strong>Age . . . . .</strong> 42</li>
+										<li><strong>Residence . . . . .</strong> Chile</li>
+									</ul>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
 
-                    <li>
-                      <div class="col-md-6 col-sm-6">
-                        <div class="wrap-card">
-                          <div class="card">
-                            <h2 class="year">
-                              2007 - 2009
-                            </h2>
-                            <p class="job">
-                              Mobile and Java developer
-                            </p>
-                            <p class="company">
-                              Nuwit
-                            </p>
-                            <hr>
-                            <div class="text-detail">
-                              <p>
-                                Software Engineer for Blackberry and Java J2EE applications.
-                                <a href="http://www.nuwit.com/index_eng.php" target="_blank">http://www.nuwit.com/index_eng.php</a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+					</div>
 
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--/.EMPLOYEMENT END-->
+					<!--
+						Skills
+					-->
+					<div class="content skills">
 
-        <!--SKILLS-->
-        <section class="white-bg" id="skill">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-3">
-                <h3 class="title-small">
-                  <span>Skills</span>
-                </h3>
-                <p class="content-detail">
-                  I have wide experience with mobile development related technologies. I have a deep knowledge of Linux operative system, administration, apps tuning and automatization of processes.
-                  Experience designing databases for mobile systems, functions programing for PostgreSQL.
-                </p>
-              </div>
-              <div class="col-md-9 content-right">
-                <!--SKILLST-->
-                <div class="skillst">
-                  <div class="skillbar" data-percent="95%">
-                    <div class="title head-sm">
-                      Xcode / Objective C / App Store Publishing
-                    </div>
-                    <div class="count-bar">
-                      <div class="count"></div>
-                    </div>
-                  </div>
-                  <div class="skillbar" data-percent="95%">
-                    <div class="title head-sm">
-                      Android Studio / Java / Google Play publishing
-                    </div>
-                    <div class="count-bar">
-                      <div class="count"></div>
-                    </div>
-                  </div>
-                  <div class="skillbar" data-percent="95%">
-                    <div class="title head-sm">
-                      Linux
-                    </div>
-                    <div class="count-bar">
-                      <div class="count"></div>
-                    </div>
-                  </div>
-                  <div class="skillbar" data-percent="90%">
-                    <div class="title head-sm">
-                      Intelli J Idea / Scala / Java
-                    </div>
-                    <div class="count-bar">
-                      <div class="count"></div>
-                    </div>
-                  </div>
-                  <div class="skillbar" data-percent="75%">
-                    <div class="title head-sm">
-                      Jquery
-                    </div>
-                    <div class="count-bar">
-                      <div class="count"></div>
-                    </div>
-                  </div>
-                  <div class="skillbar" data-percent="75%">
-                    <div class="title head-sm">
-                      CSS
-                    </div>
-                    <div class="count-bar">
-                      <div class="count"></div>
-                    </div>
-                  </div>
-                  <div class="skillbar" data-percent="75%">
-                    <div class="title head-sm">
-                      Amazon Web Services
-                    </div>
-                    <div class="count-bar">
-                      <div class="count"></div>
-                    </div>
-                  </div>
-                  <div class="skillbar" data-percent="75%">
-                    <div class="title head-sm">
-                      PostgreSQL
-                    </div>
-                    <div class="count-bar">
-                      <div class="count"></div>
-                    </div>
-                  </div>
-                  <div class="skillbar" data-percent="50%">
-                    <div class="title head-sm">
-                      MySQL
-                    </div>
-                    <div class="count-bar">
-                      <div class="count"></div>
-                    </div>
-                  </div>
+						<!-- title -->
+						<div class="title">My Skills</div>
+					
+						<!-- content -->
+						<div class="row">
+						
+							<!-- skill item development -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="skills-list">
+									<div class="skill-title border-line-h">
+										<div class="icon"><i class="fa fa-code"></i></div>
+										<div class="name">Development</div>
+									</div>
+									<ul>
+										<li class="border-line-h"> 
+											<div class="name">iOS Apps</div>
+											<div class="progress">
+												<div class="percentage" style="width:100%;"></div>
+											</div>
+										</li>
+										<li class="border-line-h"> 
+											<div class="name">Android Apps</div>
+											<div class="progress">
+												<div class="percentage" style="width:80%;"></div>
+											</div>
+										</li>
+										<li class="border-line-h"> 
+											<div class="name">Backend / API</div>
+											<div class="progress">
+												<div class="percentage" style="width:75%;"></div>
+											</div>
+										</li>
+										<li>
+											<div class="name">Web</div>
+											<div class="progress">
+												<div class="percentage" style="width:70%;"></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
 
-                </div>
-                <!--/.SKILLST END-->
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--/.SKILLS END-->
+							<!-- skill item languages -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="skills-list dotted">
+									<div class="skill-title border-line-h">
+										<div class="icon"><i class="fa fa-flag"></i></div>
+										<div class="name">Languages</div>
+									</div>
+									<ul>
+										<li class="border-line-h"> 
+											<div class="name">English</div>
+											<div class="progress">
+												<div class="percentage" style="width:90%;"></div>
+											</div>
+										</li>
+										<li class="border-line-h"> 
+											<div class="name">Japanese</div>
+											<div class="progress">
+												<div class="percentage" style="width:60%;"></div>
+											</div>
+										</li>
+										<li class="border-line-h"> 
+											<div class="name">Spanish</div>
+											<div class="progress">
+												<div class="percentage" style="width:100%;"></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
 
-        <!--EDUCATION-->
-        <section class="grey-bg" id="education">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-3">
-                <h3 class="title-small">
-                  <span>Education</span>
-                </h3>
+							<!-- skill item soft skills -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="skills-list circles">
+									<div class="skill-title border-line-h">
+										<div class="icon"><i class="fa fa-wechat"></i></div>
+										<div class="name">Soft skills</div>
+									</div>
+									<ul>
+										<li> 
+											<div class="name">Teamwork</div>
+											<div class="progress p100">
+												<span>100%</span>
+											</div>
+										</li>
+										<li> 
+											<div class="name">Creativity</div>
+											<div class="progress p95">
+												<span>95%</span>
+											</div>
+										</li>
+										<li> 
+											<div class="name">Mentoring</div>
+											<div class="progress p85">
+												<span>85%</span>
+											</div>
+										</li>
+										<li> 
+											<div class="name">Flexibility</div>
+											<div class="progress p85">
+												<span>85%</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
 
-              </div>
-              <div class="col-md-9 content-right">
-                <div class="row">
-                  <ul class="listing-item">
-                    <li>
-                      <div class="col-md-6 col-sm-6">
-                        <div class="wrap-card">
-                          <div class="card">
-                            <h2 class="year">
-                              2003 - 2007
-                            </h2>
-                            <p class="job">
-                              Computer Science and Bachelor in Computer Engineering
-                            </p>
-                            <p class="company">
-                              Universidad de Santiago de Chile
-                            </p>
-                            <hr>
-                            <div class="text-detail">
-                              <p>
-                                Graduate from the Universidad de Santiago de Chile in the career of Computer Science and Bachelor in Computer Engineering, awarded with best work degree.
-                                USACH is a top university in Chile and Latin America.
-                                <br>
-                                <a href="http://www.usach.cl/en" target="_blank">http://www.usach.cl/en</a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
+							<!-- skill item knowledge -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="skills-list list">
+									<div class="skill-title border-line-h">
+										<div class="icon"><i class="fa fa-list"></i></div>
+										<div class="name">Knowledge</div>
+									</div>
+									<ul>
+										<li> 
+											<div class="name">AppStore & Google Play apps releasing</div>
+										</li>
+										<li> 
+											<div class="name">Firebase</div>
+										</li>
+										<li> 
+											<div class="name">Amazon Web Services</div>
+										</li>
+										<li> 
+											<div class="name">Linux administration</div>
+										</li>
+										<li> 
+											<div class="name">Dabase modeling</div>
+										</li>
+										<li> 
+											<div class="name">Continuous Integration &amp; Deployment</div>
+										</li>
+										<li> 
+											<div class="name">Git</div>
+										</li>
+										<li> 
+											<div class="name">Games development</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="clear"></div>
+						</div>
+						
+					</div>
 
-                    <li>
-                      <div class="col-md-6 col-sm-6">
-                        <div class="wrap-card">
-                          <div class="card">
-                            <h2 class="year">
-                              2011 - 2012
-                            </h2>
-                            <p class="job">
-                              Japanese Language
-                            </p>
-                            <p class="company">
-                              Kudan Institute
-                            </p>
-                            <hr>
-                            <div class="text-detail">
-                              <p>
-                                Studies of Japanese Language in Kudan Institute of Japanese Language and Culture, Chiyoda-ku, Tokyo.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul class="listing-item">
-                    <li>
-                      <div class="col-md-6 col-sm-6">
-                        <div class="wrap-card">
-                          <div class="card">
-                            <h2 class="year">
-                              2017 - Now
-                            </h2>
-                            <p class="job">
-                              Japanese Language
-                            </p>
-                            <p class="company">
-                              KCP International Language School.
-                            </p>
-                            <hr>
-                            <div class="text-detail">
-                              <p>
-                                Studies of Japanese Language in KCP International Language School, Shinjuku-ku, Tokyo.
-                                <a href="http://www.kcp.ac.jp/" target="_blank">http://www.kcp.ac.jp/</a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+					<!--
+						Fun Fact
+					-->
+					<div class="content fuct">
 
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--/.EDUCATION END-->
+						<!-- title -->
+						<div class="title">Fun Fact</div>
 
-        <footer>
-          <section class="grey-bg" id="resume">
-          <div class="footer-top">
-            <ul class="socials">
-              <li class="facebook" style="width:100%">
-                <a href="Claudio_Villanueva_Resume.pdf" data-hover="Download my resume">Download My Resume</a>
-              </li>
-            </ul>
-          </div>
-        </section>
+						<!-- content -->
+						<div class="row fuct-items">
 
-          <div class="footer-bottom">
-            <div class="container">
-              <div class="row">
-                <img src="images/logo-bottom.png" alt="logo bottom" class="center-block" />
-              </div>
-            </div>
-          </div>
-        </footer>
-        <!--/.FOOTER-END-->
+							<!-- fuct item -->
+							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="fuct-item">
+									<div class="icon"><span class="fa fa-hand-rock-o"></span></div>
+									<div class="name">Karate practicioner</div>
+								</div>
+							</div>
 
-      <!--/.CONTENT END-->
-      </div>
-    <!--/.CONTENT-WRAP END-->
-    </div>
+							<!-- fuct item -->
+							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="fuct-item">
+									<div class="icon"><span class="fa fa-moon-o"></span></div>
+									<div class="name">Amateur astronomer</div>
+								</div>
+							</div>
 
+							<!-- fuct item -->
+							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="fuct-item">
+									<div class="icon"><span class="fa fa-bicycle"></span></div>
+									<div class="name">I build my own bicyles</div>
+								</div>
+							</div>
 
-    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
-    <script src="js/jquery.appear.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/classie.js" type="text/javascript"></script>
-    <script src="js/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="js/jquery.magnific-popup.min.js" type="text/javascript"></script>
-    <script src="js/masonry.pkgd.min.js" type="text/javascript"></script>
-    <script src="js/masonry.js" type="text/javascript"></script>
-    <script src="js/smooth-scroll.min.js" type="text/javascript"></script>
-    <script src="js/typed.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript"></script>
-  </body>
+							<!-- fuct item -->
+							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
+								<div class="fuct-item">
+									<div class="icon"><span class="fa fa-gamepad"></span></div>
+									<div class="name">I design and build my own games</div>
+								</div>
+							</div>
+
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+					<!-- Quote -->
+					<div class="content quote">
+
+						<!-- title -->
+						<div class="title">
+							<span >Quote</span>
+						</div>
+
+						<!-- content -->
+						<div class="row">
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="revs-item">
+									<div class="text">
+										<div >
+											Start simple, make sure everything works properly and then add complexity.
+										</div>
+									</div>
+									<div class="user">
+										<div class="img">
+											<img src="images/claudio_villanueva.jpg" alt="Claudio Villanueva" />
+										</div>
+										<div class="info">
+											<div class="name">Claudio Villanueva</div>
+											<div class="company">iOS Developer</div>
+										</div>
+										<div class="clear"></div>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<!--
+				Card - Resume
+			-->
+			<div class="card-inner" id="resume-card">
+				<div class="card-wrap">
+
+					<!--
+						Resume
+					-->
+					<div class="content resume">
+
+						<!-- title -->
+						<div class="title">Resume</div>
+
+						<!-- content -->
+						<div class="row">
+
+							<!-- experience -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="resume-title border-line-h">
+									<div class="icon"><i class="fa fa-briefcase"></i></div>
+									<div class="name">Experience</div>
+								</div>
+								<div class="resume-items">
+									<div class="resume-item border-line-h active">
+										<div class="date">2020 - Present</div>
+										<div class="name">iOS Developer</div>
+										<div class="company"><a href="https://publico.transbank.cl/">Transbank</a></div>
+										<p>
+											Transbank is the leading company in Chile in payment by electronic means. Web payment, credit and debit cards.
+										</p>
+									</div>
+									<div class="resume-item border-line-h">
+										<div class="date">2019</div>
+										<div class="name">iOS Developer</div>
+										<div class="company"><a href="https://www.wom.cl/">WOM</a></div>
+										<p>
+											WOM is the telco company with the fastest growing in the last few years in Chile. With the most competitive products it have reached a 15% of the market by 2019.
+										</p>
+									</div>
+									<div class="resume-item">
+										<div class="date">2017 - 2018</div>
+										<div class="name">iOS &amp; Android Developer</div>
+										<div class="company">Garapon TV Inc.</div>
+										<p>
+											Garapon TV is an amazing Tokyo based startup who manufactures TV recorders that deliver video streaming to mobile devices.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- education -->
+							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+								<div class="resume-title border-line-h">
+									<div class="icon"><i class="fa fa-university"></i></div>
+									<div class="name">Education</div>
+								</div>
+								<div class="resume-items">
+									<div class="resume-item border-line-h">
+										<div class="date">2003 - 2007</div>
+										<div class="name">University of Santiago</div>
+										<div class="company">Santiago, Chile</div>
+										<p>
+											Bachelor's Degree in Computer Science and Engineering.
+										</p>
+									</div>
+									<div class="resume-item border-line-h">
+										<div class="date">2011 - 2012</div>
+										<div class="name">Kudan Institute</div>
+										<div class="company">Tokyo, Japan</div>
+										<p>
+											Japanese language. Mid level, Working and daily life proficiency.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<!--
+				Card - Works
+			-->
+			<div class="card-inner" id="works-card">
+				<div class="card-wrap">
+
+					<!--
+						Works
+					-->
+					<div class="content works">
+
+						<!-- title -->
+						<div class="title">Recent Works</div>
+
+						<!-- filters -->
+						<div class="filter-menu filter-button-group">
+							<div class="f_btn active">
+								<label><input type="radio" name="fl_radio" value="grid-item" />All</label>
+							</div>
+							<div class="f_btn">
+								<label><input type="radio" name="fl_radio" value="photo" />Transbank</label>
+							</div>
+							<div class="f_btn">
+								<label><input type="radio" name="fl_radio" value="gallery" />WOM</label>
+							</div>
+							<div class="f_btn">
+								<label><input type="radio" name="fl_radio" value="video" />Garapon</label>
+							</div>
+							<div class="f_btn">
+								<label><input type="radio" name="fl_radio" value="music" />Pixtoome</label>
+							</div>
+							<div class="f_btn">
+								<label><input type="radio" name="fl_radio" value="design" />Games</label>
+							</div>
+						</div>
+
+						<!-- content -->
+						<div class="row grid-items border-line-v">
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item photo border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/tbk_01.jpg" class="has-popup-image">
+											<img src="images/works/tbk_01.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/tbk_01.jpg" class="name has-popup-image">Transbank #1</a>
+										<div class="category">iOS App</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item photo border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/tbk_02.jpg" class="has-popup-image">
+											<img src="images/works/tbk_02.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/tbk_02.jpg" class="name has-popup-image">Transbank #2</a>
+										<div class="category">iOS App</div>
+									</div>
+								</div>
+							</div>
+							
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item photo border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/tbk_03.jpg" class="has-popup-image">
+											<img src="images/works/tbk_03.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/tbk_03.jpg" class="name has-popup-image">Transbank #3</a>
+										<div class="category">iOS App</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item gallery border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/app_wom_01.png" class="has-popup-image">
+											<img src="images/works/app_wom_01.png" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/app_wom_01.png" class="name has-popup-image">WOM #1</a>
+										<div class="category">iOS App</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item gallery border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/app_wom_02.png" class="has-popup-image">
+											<img src="images/works/app_wom_02.png" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/app_wom_02.png" class="name has-popup-image">WOM #2</a>
+										<div class="category">iOS App</div>
+									</div>
+								</div>
+							</div>
+							
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item gallery border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/app_wom_03.png" class="has-popup-image">
+											<img src="images/works/app_wom_03.png" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/app_wom_03.png" class="name has-popup-image">WOM #3</a>
+										<div class="category">iOS App</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item video border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/garapon_01.jpg" class="has-popup-image">
+											<img src="images/works/garapon_01.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/garapon_01.jpg" class="name has-popup-image">Garapon #1</a>
+										<div class="category">iOS App</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item video border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/garapon_02.jpg" class="has-popup-image">
+											<img src="images/works/garapon_02.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/garapon_02.jpg" class="name has-popup-image">Garapon #2</a>
+										<div class="category">iOS App</div>
+									</div>
+								</div>
+							</div>
+							
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item video border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/garapon_03.jpg" class="has-popup-image">
+											<img src="images/works/garapon_03.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/garapon_03.jpg" class="name has-popup-image">Garapon #3</a>
+										<div class="category">iOS App</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item music border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/pixtoome_01.png" class="has-popup-image">
+											<img src="images/works/pixtoome_01.png" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/pixtoome_01.png" class="name has-popup-image">Pixtoome #1</a>
+										<div class="category">iOS App</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item music border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/pixtoome_02.png" class="has-popup-image">
+											<img src="images/works/pixtoome_02.png" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/pixtoome_02.png" class="name has-popup-image">Pixtoome #2</a>
+										<div class="category">Android App</div>
+									</div>
+								</div>
+							</div>
+							
+							<!-- work item photo -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item music border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="images/works/pixtoome_03.png" class="has-popup-image">
+											<img src="images/works/pixtoome_03.png" alt="" />
+											<span class="info">
+												<span class="ion ion-image"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="images/works/pixtoome_03.png" class="name has-popup-image">Pixtoome #3</a>
+										<div class="category">iOS App</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- work item design -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item design border-line-h">
+								<div class="box-item">
+										<div class="image">
+												<a href="#popup-1" class="has-popup-media">
+														<img src="images/works/aquila.jpg" alt="" />
+														<span class="info">
+																<span class="ion ion-images"></span>
+														</span>
+												</a>
+										</div>
+										<div class="desc">
+												<a href="#popup-1" class="name has-popup-media">Aquila</a>
+												<div class="category">Phaser 3 - Web browser game</div>
+										</div>
+										<div id="popup-1" class="popup-box mfp-fade mfp-hide">
+												<div class="content">
+														<div class="image">
+																<img src="images/works/aquila.jpg" alt="">
+														</div>
+														<div class="desc">
+																<div class="post-box">
+																		<h1>Phaser 3 - Web browser game</h1>
+																		<div class="blog-content">
+																				<p>
+																					Defeat enemy planes by shooting bullets and missiles at them.
+																				</p>
+																		</div>
+																		<a href="aquila" class="button">
+																				<span class="text">Play Aquila</span>
+																				<span class="arrow"></span>
+																		</a>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
+							</div>
+
+							<!-- work item design -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item design border-line-h">
+								<div class="box-item">
+										<div class="image">
+												<a href="#popup-2" class="has-popup-media">
+														<img src="images/works/labyrintho.png" alt="" />
+														<span class="info">
+																<span class="ion ion-images"></span>
+														</span>
+												</a>
+										</div>
+										<div class="desc">
+												<a href="#popup-2" class="name has-popup-media">Labyrintho</a>
+												<div class="category">Unity 3D - Web browser game</div>
+										</div>
+										<div id="popup-2" class="popup-box mfp-fade mfp-hide">
+												<div class="content">
+														<div class="image">
+																<img src="images/works/labyrintho.png" alt="">
+														</div>
+														<div class="desc">
+																<div class="post-box">
+																		<h1>Unity 3D - Web browser game</h1>
+																		<div class="blog-content">
+																				<p>
+																					Find the exit in procedurally generated mazes.
+																				</p>
+																		</div>
+																		<a href="labyrintho" class="button">
+																				<span class="text">Play Labyrintho</span>
+																				<span class="arrow"></span>
+																		</a>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
+							</div>
+							
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<!--
+				Card - Contacts
+			-->
+			<div class="card-inner contacts" id="contacts-card">
+				<div class="card-wrap">
+
+					<!--
+						Conacts Info
+					-->
+					<div class="content contacts">
+
+						<!-- title -->
+						<div class="title">Get in Touch</div>
+
+						<!-- content -->
+						<div class="row">
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<!-- <div class="map" id="map"></div> -->
+								<div class="info-list">
+									<ul>
+										<li><strong>Address . . . . .</strong> Santiago, Chile</li>
+										<li><strong>Email . . . . .</strong> <a href = "mailto: claudioff@gmail.com">claudioff@gmail.com</a></li>
+										<li><strong>Phone . . . . .</strong> <a href="tel:+56956377738">+56 9 563 777 38</a></li>
+										<li><strong>Github . . . . .</strong> <a href="https://github.com/cvillanueva">Visit</a></li>
+										<li><strong>Linkedin . . . . .</strong> <a href="https://www.linkedin.com/in/claudio-villanueva-albornoz-694495a4/">Visit</a></li>
+										<li><strong>Freelance . . . . .</strong> Available</li>
+										<li><strong>Willing to travel . . . . .</strong> Yes</li>
+									</ul>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="s_overlay"></div>
+		<div class="content-sidebar">
+			<div class="sidebar-wrap search-form">
+				<aside id="secondary" class="widget-area">
+					<section id="search-2" class="widget widget_search">
+						<label>
+							<span class="screen-reader-text">Search for:</span>
+							<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+						</label>
+						<input type="submit" class="search-submit" value="Search">
+					</section>
+					<section class="widget widget_recent_entries">
+						<h2 class="widget-title">
+							<span class="widget-title-span"><span class="first-word">Recent</span> Posts</span>
+						</h2>
+						<ul>
+							<li>
+								<a href="#">Creativity Is More Than</a>
+							</li>
+							<li>
+								<a href="#">Designing the perfect</a>
+							</li>
+							<li>
+								<a href="#">Music Player Design</a>
+							</li>
+							<li>
+								<a href="#">A Song And Dance Act</a>
+							</li>
+							<li>
+								<a href="#">By spite about do of allow</a>
+							</li>
+						</ul>
+					</section>
+					<section class="widget widget_recent_comments">
+						<h2 class="widget-title">
+							<span class="widget-title-span"><span class="first-word">Recent</span> Comments</span>
+						</h2>
+						<ul>
+							<li class="recentcomments">
+								<span class="comment-author-link">JOHN SMITH</span> on <a href="#">Creativity Is More Than</a>
+							</li>
+							<li class="recentcomments">
+								<span class="comment-author-link">ADAM SMITH</span> on <a href="#">Creativity Is More Than</a>
+							</li>
+							<li class="recentcomments">
+								<span class="comment-author-link">admin</span> on <a href="#">Designing the perfect</a>
+							</li>
+							<li class="recentcomments">
+								<span class="comment-author-link">admin</span> on <a href=#">Designing the perfect</a>
+							</li>
+							<li class="recentcomments">
+								<span class="comment-author-link">James</span> on <a href="#">Designing the perfect</a>
+							</li>
+						</ul>
+					</section>
+					<section class="widget widget_archive">
+						<h2 class="widget-title">
+							<span class="widget-title-span">
+								<span class="first-letter">Archives</span>
+							</span>
+						</h2>
+						<ul>
+							<li>
+								<a href="#">November 2018</a>
+							</li>
+						</ul>
+					</section>
+					<section class="widget widget_categories">
+						<h2 class="widget-title">
+							<span class="widget-title-span"><span class="first-letter">Categories</span></span>
+						</h2>
+						<ul>
+							<li class="cat-item cat-item-2">
+								<a href="#">Design</a>
+							</li>
+							<li class="cat-item cat-item-3">
+								<a href="#">Music</a>
+							</li>
+						</ul>
+					</section>
+					<section class="widget widget_meta">
+						<h2 class="widget-title">
+							<span class="widget-title-span"><span class="first-letter">Meta</span></span>
+						</h2>
+						<ul>
+							<li><a href="#">Log in</a></li>
+							<li><a href="#">Entries feed</a></li>
+							<li><a href="#">Comments feed</a></li>
+							<li><a href="#">WordPress.org</a></li>
+						</ul>
+					</section>
+				</aside>
+			</div>
+			<span class="close"></span>
+		</div>
+
+	</div>
+	
+	<!--
+		jQuery Scripts
+	-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.validate.js"></script>
+	<script src="js/jquery.magnific-popup.js"></script>
+	<script src="js/imagesloaded.pkgd.js"></script>
+	<script src="js/isotope.pkgd.js"></script>
+	<script src="js/jquery.slimscroll.js"></script>
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/typed.js"></script>
+	<script src="https://use.fontawesome.com/8da76d029b.js"></script>
+	
+	<!--
+		Google map api
+	-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz2w7HUaWudHwd7AWQpCL48Qs050WOn9s"></script>
+	
+	<!--
+		Main Scripts
+	-->
+	<script src="js/scripts.js"></script>
+	
+</body>
 </html>
